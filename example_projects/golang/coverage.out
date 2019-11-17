@@ -1,0 +1,2 @@
+mode: set
+github.com/jbrekelmans/sonnar-scanner-docker/example_projects/golang/pkg/greeter/greeter.go:7.14,9.2 1 1

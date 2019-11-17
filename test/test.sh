@@ -8,6 +8,8 @@ docker build --build-arg="SONAR_URL=http://sonarqube:9000/" --network=test_sonar
 docker images --filter=reference=sonar-scanner-cli:latest
 docker run \
     --network=test_sonarnet \
+    --workdir=/root \
     sonar-scanner-cli:latest \
     -Dsonar.host.url="http://sonarqube:9000/" \
+    -Dsonar.projectKey="myrepo|myapp" \
     -X

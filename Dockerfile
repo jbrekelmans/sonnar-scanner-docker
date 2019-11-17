@@ -68,7 +68,7 @@ RUN apk --update add --virtual .build-deps --no-cache curl binutils && \
     rm -rf "$TMP_DIR" /var/cache/apk/* /etc/apk/keys/sgerrand.rsa.pub
 
 COPY --from=sonar-scanner-cli-builder /opt/sonar-scanner /opt/sonar-scanner
-ENV PATH=/opt/sonar-scanner/bin:$PATH
+ENV PATH=/opt/sonar-scanner/bin:/opt/sonar-scanner/jre/bin:$PATH
 ENTRYPOINT ["sonar-scanner"]
 
 # Set SONAR_URL to non-zero to warmup the plugins cache, this could add ~100MB.
